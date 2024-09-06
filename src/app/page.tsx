@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2024-09-07T00:00:00");
+    const targetDate = new Date("2024-09-08T13:30:00Z");
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
