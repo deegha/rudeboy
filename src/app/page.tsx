@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2024-09-08T13:30:00Z");
+    const targetDate = new Date("2024-09-07T13:30:00Z"); // 8th September, 7 PM IST
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
@@ -17,9 +17,10 @@ export default function Home() {
     };
 
     if (difference > 0) {
+      const totalHours = Math.floor(difference / (1000 * 60 * 60));
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        days: Math.floor(totalHours / 24),
+        hours: totalHours % 24,
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
